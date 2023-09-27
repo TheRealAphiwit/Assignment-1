@@ -2,15 +2,29 @@ using System;
 using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
-public class Init : MonoBehaviour
+public class InitMonobehaviour : MonoBehaviour
 {
     [SerializeField] private GameState gameStatePrefab;
 
     private void Awake()
     {
-        // Initialize the network service
+        // Init network
 
-        // Init the game state
+        // Init game state
+        LoadGameState();
+
+        // Init scene manager
+
+        // Init input manager
+
+        // Init UI
+        
+        LoaderService();
+
+    }
+
+    private void LoadGameState()
+    {
         var gameState = Instantiate(gameStatePrefab);
         gameState.Initialize();
 
@@ -25,6 +39,6 @@ public class Init : MonoBehaviour
 
     private void LoaderService()
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException();  
     }
 }

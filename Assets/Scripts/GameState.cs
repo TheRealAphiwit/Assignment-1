@@ -5,7 +5,7 @@ using UnityEngine;
 // Game state service
 public class GameState : MonoBehaviour
 {
-    public static GameState Instance { get; private set; }
+    public static GameState Instance;
 
     public void Initialize()
     {
@@ -13,9 +13,16 @@ public class GameState : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
+            GameStateStatusMessage("Instance has been set.");
             return;
         }
 
+        GameStateStatusMessage("Duplicate detected! Destroying GO.");
         Destroy(gameObject);
+    }
+
+    private void GameStateStatusMessage(string GameStateContext)
+    {
+        Debug.Log(GameStateContext);
     }
 }
