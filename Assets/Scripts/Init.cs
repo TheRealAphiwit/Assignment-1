@@ -8,8 +8,18 @@ public class Init : MonoBehaviour
 
     private void Awake()
     {
+        // Initialize the network service
+
+        // Init the game state
         var gameState = Instantiate(gameStatePrefab);
         gameState.Initialize();
+
+        // Init scene manager
+
+        // Init input manager
+
+        // Init UI
+
         LoaderService();
     }
 
