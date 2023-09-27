@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
