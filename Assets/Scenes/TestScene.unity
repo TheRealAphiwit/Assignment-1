@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicleModel: {fileID: 276741298}
-  rb: {fileID: 0}
+  rb: {fileID: 310453242}
   speed: 10
 --- !u!114 &711233548
 MonoBehaviour:
