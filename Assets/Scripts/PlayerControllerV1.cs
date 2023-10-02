@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         if (IsMoving)
         {
-            Debug.Log("IsMoving = true");
             rb.AddRelativeForce(Vector3.forward * movementValue * movementSpeed * Time.deltaTime);
             Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
             localVelocity.x = 0f;
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour
 
             rb.AddTorque(Vector3.up * turnValue * rotationSpeed * movementSpeed * Time.deltaTime);
         }
-        //rb.AddForce(movement * speed * Time.deltaTime);
     }
 
     public void OnMove(InputAction.CallbackContext context)
