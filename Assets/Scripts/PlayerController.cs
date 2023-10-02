@@ -7,15 +7,16 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Vehicle Prefab")]
     [SerializeField] GameObject vehicleModel;
-    [SerializeField] float speed; // If we're gonna add velocity [THEN HERE]
+    [SerializeField] float movementSpeed; // If we're gonna add velocity [THEN HERE]
+    [SerializeField] float rotationSpeed;
 
     public bool IsMoving;
 
     private Rigidbody rb;
     private Vector2 movementInput; // Maybe can be used moveInput.x instead of
                                // separating it into 2 vars
-    private Vector3 movementValue;
-    private Quaternion movementRotation;
+    private float movementValue;
+    private float turnValue;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,12 @@ public class PlayerController : MonoBehaviour
         if (IsMoving)
         {
             Debug.Log("IsMoving = true");
-            transform.Rotate(movementInput.x, 0.0f, 0.0f, Space.World); // This is not working properly
-            rb.AddForce(movementValue * speed * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.forward * movementValue * movementSpeed * Time.deltaTime);
+            Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+            localVelocity.x = 0f;
+            rb.velocity = transform.TransformDirection(localVelocity);
+
+            rb.AddTorque(Vector3.up * turnValue * rotationSpeed * movementSpeed * Time.deltaTime);
         }
         //rb.AddForce(movement * speed * Time.deltaTime);
     }
@@ -37,7 +42,8 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        movementValue = new Vector3(0.0f, 0.0f, movementInput.y);
+        movementValue = movementInput.y;
+        turnValue = movementInput.x;
         IsMoving = movementInput != Vector2.zero;
     }
 }
