@@ -12,13 +12,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float turnValue;
     [SerializeField] float forwardMofifier;
     [SerializeField] float turnMofifier;
-
-    private Rigidbody rb;
+    [SerializeField] Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInChildren<Rigidbody>();
+        if (rb != null)
+        {
+            Debug.Log("rb aquired!");
+        }
     }
 
     // Update is called once per frame
