@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -40,5 +41,17 @@ public class PauseMenu : MonoBehaviour
             GameIsPaused = false;
         }
         Debug.Log("Input pressed!");
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game!");
+        Application.Quit(); 
     }
 }
