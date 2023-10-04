@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour
     {
         // Forward movement
         transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
-        rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
-        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
-        localVelocity.x = 0f;
-        rb.velocity = transform.TransformDirection(localVelocity);
+        //rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
+        //Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+        //localVelocity.x = 0f;
+        //rb.velocity = transform.TransformDirection(localVelocity);
 
         transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
     }
