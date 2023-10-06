@@ -153,12 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5df4f73a372d148966bb0ec6ffc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceModifier: 0
+  rb: {fileID: 0}
   forwardValue: 0
   turnValue: 0
   forwardMofifier: 10
   turnMofifier: 100
-  rb: {fileID: 0}
+  forceModifier: 0
+  maxHealth: 0
+  health: 0
+  defense: 0
 --- !u!114 &6564277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,12 +449,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5df4f73a372d148966bb0ec6ffc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceModifier: 0
+  rb: {fileID: 0}
   forwardValue: 0
   turnValue: 0
   forwardMofifier: 10
   turnMofifier: 100
-  rb: {fileID: 0}
+  forceModifier: 0
+  maxHealth: 0
+  health: 0
+  defense: 0
 --- !u!114 &186735962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,11 +2152,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 1989862915}
   - {fileID: 1201165302}
-  - {fileID: 5682852669038960408}
   - {fileID: 6564278}
   - {fileID: 186735963}
   - {fileID: 1675040833}
   - {fileID: 1862527367}
+  - {fileID: 5682852669038960408}
   - {fileID: 3653252315788986637}
   - {fileID: 197620085}
   - {fileID: 1493813236}

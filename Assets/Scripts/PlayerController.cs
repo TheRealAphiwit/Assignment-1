@@ -5,14 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float forceModifier;
-
-    [Header("Vehicle Prefab Variables")]
+    [Header("Movement Variables")]
+    [SerializeField] Rigidbody rb;
     [SerializeField] float forwardValue;
     [SerializeField] float turnValue;
     [SerializeField] float forwardMofifier;
     [SerializeField] float turnMofifier;
-    [SerializeField] Rigidbody rb;
+    [SerializeField] float forceModifier;
+
+    [Header("Status Variables")]
+    public float maxHealth;
+    public float health;
+    public float defense;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +33,10 @@ public class PlayerController : MonoBehaviour
     {
         // Forward movement
         transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
-        //rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
-        //Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
-        //localVelocity.x = 0f;
-        //rb.velocity = transform.TransformDirection(localVelocity);
+        rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
+        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+        localVelocity.x = 0f;
+        rb.velocity = transform.TransformDirection(localVelocity);
 
         transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
     }
