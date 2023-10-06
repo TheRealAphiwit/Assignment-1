@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 8555445929970967660}
   m_Layer: 0
   m_Name: Veh_Ute_Red_Z
-  m_TagString: Untagged
+  m_TagString: PlayerVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] float forwardValue;
     [SerializeField] float turnValue;
-    [SerializeField] float forwardMofifier;
+    [SerializeField] float speed;
     [SerializeField] float turnMofifier;
     [SerializeField] float forceModifier;
 
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public float health;
     public float defense;
+    public float speedMod;
 
     // Start is called before the first frame update
     void Start()
@@ -32,19 +33,19 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Forward movement
-        transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
-        rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
-        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
-        localVelocity.x = 0f;
-        rb.velocity = transform.TransformDirection(localVelocity);
+        rb.transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
+        //rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
+        //Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
+        //localVelocity.x = 0f;
+        //rb.velocity = rb.transform.TransformDirection(localVelocity);
 
-        transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
+        rb.transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
     }
 
     public void OnDrive(InputAction.CallbackContext context)
     {
         forwardValue = context.ReadValue<float>();
-        forwardValue *= forwardMofifier;
+        forwardValue *= speed + speedMod;
     }
 
     public void OnTurn(InputAction.CallbackContext context)
