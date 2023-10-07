@@ -6,14 +6,29 @@ public class PowerUp : MonoBehaviour
 {
     public PowerUpEffect powerUpEffect;
 
+    [SerializeField] bool onField;
+    [SerializeField] float downtime;
+
+    private void Start()
+    {
+        onField = true;
+    }
+
     private void Update()
     {
-        //bool check and timer
+        if (onField == false)
+        {
+            Debug.Log("Item not on field!");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject); //Change from destroy
+        //Change from destroy
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        onField = false;
+
         if (other.CompareTag("PlayerVehicle"))
         {
             Debug.Log("Collision with player detected!");
