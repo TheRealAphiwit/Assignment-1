@@ -7,9 +7,10 @@ public class PowerUp : MonoBehaviour
     public PowerUpEffect powerUpEffect;
 
     [SerializeField] bool onField;
-    [SerializeField] float downtime;
+    [SerializeField] float timeToMatch;
+    [SerializeField] float tempTime;
 
-    private void Start()
+    private void Awake()
     {
         onField = true;
     }
@@ -18,16 +19,19 @@ public class PowerUp : MonoBehaviour
     {
         if (onField == false)
         {
-            Debug.Log("Item not on field!");
+            tempTime += Time.deltaTime;
+            if (tempTime >= timeToMatch)
+            {
+                SetPowerUpCondition(true);
+                tempTime = 0;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Change from destroy
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-        onField = false;
+        SetPowerUpCondition(false);
 
         if (other.CompareTag("PlayerVehicle"))
         {
@@ -37,5 +41,12 @@ public class PowerUp : MonoBehaviour
         {
             Debug.Log("Non player collision");
         }
+    }
+
+    private void SetPowerUpCondition(bool condition)
+    {
+        GetComponent<MeshRenderer>().enabled = condition;
+        GetComponent<Collider>().enabled = condition;
+        onField = condition;
     }
 }
