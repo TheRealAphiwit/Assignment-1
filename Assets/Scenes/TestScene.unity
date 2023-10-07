@@ -2155,6 +2155,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4819013482330986853, guid: 785e761cd503cee469e5a66da5f5a0f5, type: 3}
+      propertyPath: onField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4866758543069270666, guid: 785e761cd503cee469e5a66da5f5a0f5, type: 3}
       propertyPath: m_Name
       value: SpeedBoostPowerUp
