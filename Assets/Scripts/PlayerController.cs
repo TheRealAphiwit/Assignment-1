@@ -18,11 +18,19 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float defense;
     public float speedMod;
+    public int lapNumber;
+    public int checkpointIndex;
+
+    private void Awake()
+    {
+        rb = GetComponentInChildren<Rigidbody>();
+        lapNumber = 1;
+        checkpointIndex = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponentInChildren<Rigidbody>();
         if (rb != null)
         {
             Debug.Log("rb aquired!");

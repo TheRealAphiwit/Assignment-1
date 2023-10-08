@@ -13,7 +13,7 @@ public class SpeedBuff : PowerUpEffect
         target.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * tempAmount);
         if(permAmount != 0)
         {
-            target.GetComponent<PlayerController>().speedMod += permAmount;
+            target.GetComponentInParent<PlayerController>().speedMod += permAmount;
         }
     }
 }
