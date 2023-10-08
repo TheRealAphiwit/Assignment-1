@@ -20,34 +20,32 @@ public class PlayerController : MonoBehaviour
     public float speedMod;
     public int lapNumber;
     public int checkpointIndex;
+    public bool moveable;
+    public Vector3 playerSpawnPoint;
 
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody>();
         lapNumber = 1;
         checkpointIndex = 0;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (rb != null)
-        {
-            Debug.Log("rb aquired!");
-        }
+        playerSpawnPoint = rb.transform.position;
+        moveable = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Forward movement
-        rb.transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
-        //rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
-        //Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
-        //localVelocity.x = 0f;
-        //rb.velocity = rb.transform.TransformDirection(localVelocity);
+        if (moveable)
+        {
+            // Forward movement
+            rb.transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
+            Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
+            localVelocity.x = 0f;
+            rb.velocity = rb.transform.TransformDirection(localVelocity);
 
-        rb.transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
+            rb.transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
+        }
     }
 
     public void OnDrive(InputAction.CallbackContext context)
