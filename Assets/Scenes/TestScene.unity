@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 64214786}
   - component: {fileID: 64214785}
   - component: {fileID: 64214784}
+  - component: {fileID: 64214788}
   m_Layer: 0
   m_Name: LapCheck
   m_TagString: Untagged
@@ -395,6 +396,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64214788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64214783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d08e496bd706c440a8cb8e6a362e088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoints:
+  - {fileID: 5682852669038960412}
+  - {fileID: 5682852669038960411}
+  - {fileID: 5682852669038960410}
+  - {fileID: 5682852669038960409}
+  totalLaps: 1
 --- !u!1 &141834150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1708,7 @@ GameObject:
   - component: {fileID: 1392182939}
   - component: {fileID: 1392182941}
   - component: {fileID: 1392182940}
-  - component: {fileID: 1392182942}
+  - component: {fileID: 1392182943}
   m_Layer: 0
   m_Name: ___Game___
   m_TagString: Untagged
@@ -1775,7 +1794,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1392182942
+--- !u!114 &1392182943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1784,16 +1803,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1392182938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d08e496bd706c440a8cb8e6a362e088, type: 3}
+  m_Script: {fileID: 11500000, guid: 77d492a1a111ab048b9c6ea2588463a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lapLine: {fileID: 64214783}
-  checkpoints:
-  - {fileID: 5682852669038960412}
-  - {fileID: 5682852669038960411}
-  - {fileID: 5682852669038960410}
-  - {fileID: 5682852669038960409}
-  totalLaps: 2
+  player1: {fileID: 6564275}
+  player2: {fileID: 186735960}
+  playerController1: {fileID: 0}
+  playerController2: {fileID: 0}
 --- !u!4 &1449833908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428284, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
@@ -1888,7 +1904,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.7
+  m_fontSize: 40.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

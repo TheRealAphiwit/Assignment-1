@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LapManager : MonoBehaviour
 {
-    public GameObject lapLine;
     public List<Checkpoint> checkpoints;
     public int totalLaps;
 
@@ -13,7 +12,7 @@ public class LapManager : MonoBehaviour
     {
         if (other.CompareTag("PlayerVehicle"))
         {
-            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
+            PlayerController playerController = other.gameObject.GetComponentInParent<PlayerController>();
             if (playerController.checkpointIndex == checkpoints.Count)
             {
                 playerController.checkpointIndex = 0;
