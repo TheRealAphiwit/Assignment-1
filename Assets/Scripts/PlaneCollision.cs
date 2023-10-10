@@ -10,7 +10,8 @@ public class PlaneCollision : MonoBehaviour
         {
             PlayerController playerController = other.gameObject.GetComponentInParent<PlayerController>();
             Rigidbody playerRb = other.gameObject.GetComponentInParent<Rigidbody>();
-            playerRb.transform.position = playerController.playerSpawnPoint;
+            playerRb.transform.position = new Vector3(playerController.playerSpawnPoint.x, playerController.playerSpawnPoint.y + 2, playerController.playerSpawnPoint.z);
+            playerRb.transform.rotation = playerController.playerSpawnRotation;
         } else
         {
             Debug.Log("The object was not a player. MUST DESTROY!");

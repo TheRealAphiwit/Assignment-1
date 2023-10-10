@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Get a scenemanagerscript
     }
 
     // Update is called once per frame

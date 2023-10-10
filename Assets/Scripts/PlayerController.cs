@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
     public int checkpointIndex;
     public bool moveable;
     public Vector3 playerSpawnPoint;
+    public Quaternion playerSpawnRotation;
 
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody>();
-        lapNumber = 1;
+        lapNumber = 0;
         checkpointIndex = 0;
         playerSpawnPoint = rb.transform.position;
         moveable = true;
@@ -39,10 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             // Forward movement
             rb.transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
-            rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
-            Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
-            localVelocity.x = 0f;
-            rb.velocity = rb.transform.TransformDirection(localVelocity);
+            //rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
+            //Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
+            //localVelocity.x = 0f;
+            //rb.velocity = rb.transform.TransformDirection(localVelocity);
 
             rb.transform.Rotate(Vector3.up * turnValue * Time.deltaTime);
         }
