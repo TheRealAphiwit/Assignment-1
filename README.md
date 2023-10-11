@@ -46,6 +46,7 @@ If it didn't work:
 
 Main idea:
 Have a structure that can be reskinned and is reuseable.
+(I did try my hand at a initscene and the way to initialize a game like what Sebastian showed but I didn't finnish this.)
 
 Structure:
 The GameManager will watch over the games set lap and the players lap value, if the players respective laps matches the set lap count then the game will transition sceen using sceenemanager.
