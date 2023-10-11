@@ -11,12 +11,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject playerStatsUI;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Get a scenemanagerscript
-    }
-
     // Update is called once per frame
     void Update()
     {
