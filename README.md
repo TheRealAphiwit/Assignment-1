@@ -73,6 +73,8 @@ Powerup related structure:
 Used scriptable object as a basis so that the system could be reskinned and reuseable. I mostly followed BMo's video about it while adding some small twists to it.
 https://www.youtube.com/watch?v=PkNRPOrtyls
 
+A twist I added was how the powerups don't actually get destroyed in the game but just gets turned invisable and their colliders are turned false; check the PowerUp.cs -> SetPowerUpCondition.
+
 Key mappings:
 Player 1;
 W&S - forward and backward
