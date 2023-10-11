@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Status Variables")]
     public float maxHealth;
     public float health;
-    public float defense;
+    //public float defense;
     public float speedMod;
     public int lapNumber;
     public int checkpointIndex;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         if (moveable)
         {
-            // Forward movement
+            // Forward movement - I used both translate and addrelativeforce as it felt more natural
             rb.transform.Translate(Vector3.forward * forwardValue * Time.deltaTime);
             rb.AddRelativeForce(Vector3.forward * forwardValue * forceModifier * Time.deltaTime);
             Vector3 localVelocity = rb.transform.InverseTransformDirection(rb.velocity);
