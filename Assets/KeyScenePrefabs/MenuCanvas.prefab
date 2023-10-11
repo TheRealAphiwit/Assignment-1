@@ -333,7 +333,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8157968951153844881}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
@@ -345,6 +345,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1693756726481833047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6935764021921622440}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6935764021921622440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693756726481833047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8171603, y: 0.8171603, z: 0.8171603}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1109752939474182058}
+  - {fileID: 2038745447707923198}
+  m_Father: {fileID: 5981636258108115051}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2667293297322222300
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,19 +537,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116299032478292708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -96.272766}
+  m_LocalScale: {x: 1.2237501, y: 1.2237501, z: 1.2237501}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2054540336727091597}
   - {fileID: 6680726477444953329}
-  m_Father: {fileID: 5981636258108115051}
+  m_Father: {fileID: 6935764021921622440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 306.01, y: -84.033}
-  m_SizeDelta: {x: -612.0112, y: -168.0653}
+  m_AnchoredPosition: {x: 373, y: -103.1}
+  m_SizeDelta: {x: 187.98877, y: 282.19006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &573652256335215504
 CanvasRenderer:
@@ -715,19 +748,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3214668559919794648}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -96.272766}
+  m_LocalScale: {x: 1.2237501, y: 1.2237501, z: 1.2237501}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2012100527527878044}
   - {fileID: 603981761067755033}
-  m_Father: {fileID: 5981636258108115051}
+  m_Father: {fileID: 6935764021921622440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -306.00568, y: -84.03264}
-  m_SizeDelta: {x: -612.0112, y: -168.0653}
+  m_AnchoredPosition: {x: -375.95416, y: -103.09958}
+  m_SizeDelta: {x: 187.98877, y: 282.19006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8897918186812419020
 CanvasRenderer:
@@ -1204,8 +1237,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1613145918215516186}
-  - {fileID: 1109752939474182058}
-  - {fileID: 2038745447707923198}
+  - {fileID: 6935764021921622440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1339,6 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 569786834004280349}
+  playerStatsUI: {fileID: 1693756726481833047}
 --- !u!114 &1925360170468420889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,7 +1644,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8157968951153844881}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1744,7 +1777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8157968951153844881}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: OnPause_OnResume
         m_Mode: 1
