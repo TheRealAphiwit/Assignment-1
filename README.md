@@ -4,6 +4,9 @@ This is a non profit school assingment that used [Unity's Prototype1 Models](htt
 Student name: Aphiwit Lekphet
 Unity ver: 2022.3.8f1
 
+[Discalimer!]
+This is a work in progress that I will still work with after the assignments due date, hence there are some prefabs and variables that are currently not being used in this build.
+
 Intended behaviours/mechanics:
 * Vehicles should be able to move using WASD or the arrow buttons.
 * Vehicles should be able to flip over if the player is going at high speed towards a direction and turning too hard.
