@@ -1,4 +1,8 @@
 # Assignment-1
+This is a non profit school assingment that used [Unity's Prototype1 Models](https://learn.unity.com/tutorial/set-up-your-first-project-in-unity?uv=2021.3&courseId=5cf96c41edbc2a2ca6e8810f&projectId=5caccdfbedbc2a3cef0efe63#) for educational purposes.
+
+Student name: Aphiwit Lekphet
+Unity ver: 2022.3.8f1
 
 Intended behaviours/mechanics:
 * Vehicles should be able to move using WASD or the arrow buttons.
