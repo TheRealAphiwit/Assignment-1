@@ -31,12 +31,12 @@ public class SceneDirector : MonoBehaviour
         }
         else if (playerController2.lapNumber >= lapManager.totalLaps)
         {
-            Debug.Log("player 2 won!");
-            if (SceneManager.GetActiveScene().buildIndex > SceneManager.sceneCountInBuildSettings)
+            Debug.Log("Player 2 won!");
+            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            else
+            else if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings)
             {
                 Debug.Log("There are no more scenes to load!");
             }
